@@ -4,7 +4,13 @@
 #include "bitmap.h"
 #include <string>
 
+using namespace std;
+
 int main() {
+    
+    int Rows;
+    int Columns;
+
 
 //ask user for picture, must be a bmp.
 //if user submits a non bmp file, alert them so they can submit the correct file
@@ -16,8 +22,17 @@ int main() {
 //Check to make sure all pixels have been converted
 //Take photo from pixel matrix                   frompixelmatrix()
 //make sure the old file was not/does not get overwritten.
+    Bitmap image;
+    vector <vector <Pixel> > bmp;
+    Pixel rgb;
 
+    image.open("machupicchu.bmp");
+    bmp = image.toPixelMatrix();
+    Rows = bmp.size();
+    Columns = bmp[0].size();
+    cout<<"machupicchu.bmp has been loaded. It is "<<Columns<<" pixels wide and "<<Rows<<" pixels high"<<endl;
 
+    
 
 
 
